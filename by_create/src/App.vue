@@ -23,7 +23,7 @@
                         icon: 'fa fa-home'
                     },
                     {
-                        href: '/',
+                        href: '/installation',
                         title: 'Vue 설치 방법',
                         icon: 'fa fa-download'
                     },
@@ -33,13 +33,17 @@
                         icon: 'fa fa-fast-forward'
                     },
                     {
-                        href: '/charts',
+                        href: '/basicConcept',
                         title: 'Vue 개념 기초',
                         icon: 'fa fa-bars',
                         child: [
                             {
-                                href: '/charts/sublink',
-                                title: 'Sub Link'
+                                href: '/basicConcept_sub1',
+                                title: 'Sub Link1'
+                            },
+                            {
+                                href: '/basicConcept_sub2',
+                                title: 'Sub Link2'
                             }
                         ]
                     }
