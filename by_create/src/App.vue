@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <sidebar-menu :menu="menu" />
-    <div id="nav">
+    <div id="sidebar">
+        <sidebar-menu :menu="menu" />
     </div>
-    <router-view/>
+    <div id="nav">
+        <router-view/> <!-- views/에 있는 각 컴포넌트들을 보여주는 역할 -->
+    </div>
   </div>
 </template>
 
@@ -47,6 +49,7 @@
                             }
                         ]
                     }
+                    
                 ]
             }
         }
@@ -62,16 +65,4 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a { 
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
