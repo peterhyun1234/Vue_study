@@ -2,8 +2,6 @@
   <div id="app">
     <sidebar-menu :menu="menu" />
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
     </div>
     <router-view/>
   </div>
@@ -16,18 +14,28 @@
                 menu: [
                     {
                         header: true,
-                        title: 'Main Navigation',
+                        title: 'JHB VUE STUDY',
                         hiddenOnCollapse: true
                     },
                     {
                         href: '/',
-                        title: 'Dashboard',
-                        icon: 'fa fa-user'
+                        title: '홈 화면',
+                        icon: 'fa fa-home'
+                    },
+                    {
+                        href: '/',
+                        title: 'Vue 설치 방법',
+                        icon: 'fa fa-download'
+                    },
+                    {
+                        href: '/quickStart',
+                        title: 'Vue 빠른 시작',
+                        icon: 'fa fa-fast-forward'
                     },
                     {
                         href: '/charts',
-                        title: 'Charts',
-                        icon: 'fa fa-chart-area',
+                        title: 'Vue 개념 기초',
+                        icon: 'fa fa-bars',
                         child: [
                             {
                                 href: '/charts/sublink',
