@@ -4,86 +4,59 @@
     <div class="container"> 
       <div class="row">
        <main class="col-12" role="main">
-        <section class= "slide">
-        <div class="slideshow-container">
-
-          <div class="mySlides fade">
-            <p>path is {{images[currentNumber]}}</p>
-            <!-- <img alt="slide1" v-bind:src="images[currentNumber]" style="max-width: 40%; height: auto;"> -->
+        <section class="slide">
+          <div class="slideshow-container">
+            <img alt="test" v-bind:src="notebookIcon"/>
+            <img alt="slide" v-bind:src="slideImages[currentNumber]" 
+              style="max-width: 40%; height: auto;"
+              v-on:mouseover="stopRotation"
+              v-on:mouseout="startRotation"
+            />
           </div>
-
-          <div class="mySlides fade">
-            <img alt="slide2" src="../assets/slide2.jpg" style="max-width: 40%; height: auto;">
-          </div>
-
-          <div class="mySlides fade">
-            <img alt="slide3" src="../assets/slide3.jpg" style="max-width: 40%; height: auto;">
-          </div>
-
-        </div>
         </section>
         <section class= "content1">
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-                <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-                <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-                <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-                <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-                <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
+          <div class ="box">
+            <p>content1</p>
+            <p>content1</p>
+            <p>content1</p>
+            <p>content1</p>
+            <p>content1</p>
+            <p>content1</p>
+            <p>content1</p>
+          </div>
         </section>
         <section class= "content2">
-                <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-                <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-                <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-                <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-                <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-                <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-                <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
-        <p>section2</p>
+          <div class ="box">
+            <p>content2</p>
+          </div>
         </section>
         <section class= "content3">
+          <div class ="box">
+            <p>content3</p>
+          </div>
         </section>
        </main>
       </div> 
     </div>
-    <img alt="logo" src="../assets/test.png">
+    <div class="site-footer">
+        <div class ="footer-logo">
+          <img alt="logo" src="../assets/logo.png" style="max-width: 50%; height: auto;"/>
+        </div>   
+        <div class ="footer-content">
+          <div class ="footer-icon">
+            <a class ="opencarelab-icon" href= "https://www.opencarelab.com/" target="_blank" rel="noopener">Opencarelab</a>
+            <a class ="icon-box" href= "https://github.com/peterhyun1234/Vue_study" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+            <a class ="icon-box" href= "https://github.com/peterhyun1234/Vue_study" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+            <a class ="icon-box" href= "https://github.com/peterhyun1234/Vue_study" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+          </div> 
+          <div class ="footer-license">
+            <p>
+              Released under the MIT License<br>
+              Copyright © 2020-2025 Peter Jeon
+            </p>
+          </div> 
+        </div>
+    </div>
   </div>
 </template>
 
@@ -94,10 +67,27 @@ export default {
   name: 'home',
   data() {
     return {
-      number: 13,
-      images: ["../assets/slide1.jpg", "../assets/slide2.jpg", "../assets/slide3.jpg"],
-      currentNumber: 0,
-      img1: "https://imgur.com/HjgUCHF"
+      notebookIcon: "https://imgur.com/ijYPMMw.png",
+      slideImages: ["https://imgur.com/LlUdWIf.jpg", "https://imgur.com/IAlDDXT.jpg", "https://imgur.com/1bqiGwG.jpg"],
+      currentNumber: 0
+    }
+  },
+  methods: {
+    startRotation: function() {
+      this.timer = setInterval(this.next, 1000);
+    },
+
+    stopRotation: function() {
+      clearTimeout(this.timer);
+      this.timer = null;
+    },
+
+    next: function() {
+      if(this.currentNumber == 2)
+        this.currentNumber = 0
+      else{
+        this.currentNumber += 1 
+      }
     }
   },
   components: {
@@ -114,10 +104,57 @@ export default {
     margin-left: auto;
   }
   .row {
-    background-color: red;
+    background-color: #f2f2f2;
     flex-wrap: wrap;
     margin-right: +10%;
     margin-left: +10%;
-}
+  }
+  .box {
+      font-family: "Google Sans", "Roboto", sans-serif;
+      color: black; 
+      background-color: white; 
+      font-size: 22px; 
+      margin: 30px 0px;  
+      padding: 10px 30px 5px;
+      border: 1px solid #d9d9d9;
+      border-radius: 1%;
+  }
+  .site-footer {
+    font-family: "Google Sans", "Roboto", sans-serif; 
+    float: left;
+    background-color: #2e2e2e;
+    color: white;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .footer-content {
+    float: right;
+    height: 100%;
+    margin-right: 40px;
+  }
+  .footer-icon {
+    padding: 30px 10px 10px;
+  }
+  .footer-license {
+    text-align:right;
+  }
+  .footer-logo {
+    float: right;
+    margin-right: -40px;
+    margin-left: -40px;
+    padding: 20px 10px 10px;
+  }
+  .opencarelab-icon {
+    color:white; 
+    padding: 7px; 
+    text-decoration: none; 
+    font-family: Fantasy; 
+    font-size: 25px;
+  }
+  .icon-box {
+    color:white; 
+    padding: 7px;
+  }
 
 </style>
