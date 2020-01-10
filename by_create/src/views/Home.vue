@@ -30,22 +30,39 @@
                 </div>
               </transition>
           </div>
-          <div class="slide-text" v-if="currentNumber === 0"><p>Design beautiful web/apps</p></div>
-          <div class="slide-text" v-if="currentNumber === 1"><p>Productively build web/apps</p></div>
-          <div class="slide-text" v-if="currentNumber === 2"><p>Create faster web/apps</p></div>
+          <div class="slide-text" v-if="currentNumber === 0">
+            <p text-shadow: style="text-shadow: 0.5px 0.5px 0.5px gray;">
+              <span style="color: white;">Design be</span>
+              <span style="color: #4fe8a4;">autiful web/apps</span>
+            </p>
+          </div>
+          <div class="slide-text" v-if="currentNumber === 1">
+            <p text-shadow: style="text-shadow: 0.5px 0.5px 0.5px gray;">
+            <span style="color: #4fe8a4;">Produ</span>
+            <span style="color: white;">ctively buil</span>
+            <span style="color: #4fe8a4;">d web/apps</span>
+            </p>
+          </div>
+          <div class="slide-text" v-if="currentNumber === 2">
+            <p text-shadow: style="text-shadow: 0.5px 0.5px 0.5px gray;">
+              <span style="color: #4fe8a4;">Create faster we</span>
+              <span style="color: white;">b/apps</span>
+            </p>
+          </div>
           <div class= "notebook-icon">
             <img alt="notebook-icon" v-bind:src="notebookIcon" style="max-width: 90%; height: auto;"/>
           </div>
         </section>
         <section class= "content1">
           <div class ="box">
-            <p>content1</p>
-            <p>content1</p>
-            <p>content1</p>
-            <p>content1</p>
-            <p>content1</p>
-            <p>content1</p>
-            <p>content1</p>
+            <p>
+              Made By 
+              <a class ="opencarelab-icon" href= "https://www.opencarelab.com/" target="_blank" rel="noopener">
+                Opencarelab
+              </a>
+            </p>
+            <p>Vue는 아주 쓸만 합니다 제가 웹을 하나도 모르는 상태인데 조금만 공부해도 쉽게 사용할 수 있을 정도입니다.
+            </p>
           </div>
         </section>
         <section class= "content2">
@@ -67,7 +84,7 @@
         </div>   
         <div class ="footer-content">
           <div class ="footer-icon">
-            <a class ="opencarelab-icon" href= "https://www.opencarelab.com/" target="_blank" rel="noopener">Opencarelab</a>
+            <a class ="opencarelab-icon-footer" href= "https://www.opencarelab.com/" target="_blank" rel="noopener">Opencarelab</a>
             <a class ="icon-box" href= "https://github.com/peterhyun1234/Vue_study" target="_blank"><i class="fa fa-github fa-2x"></i></a>
             <a class ="icon-box" href= "https://github.com/peterhyun1234/Vue_study" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
             <a class ="icon-box" href= "https://www.linkedin.com/in/hyunbin-jeon-196a2b19b/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
@@ -98,7 +115,7 @@ export default {
   },
   methods: {
     startRotation: function() {
-      this.timer = setInterval(this.next, 2000);
+      this.timer = setInterval(this.next, 3000);
     },
 
     stopRotation: function() {
@@ -183,7 +200,7 @@ export default {
 
   .box {
       font-family: "Google Sans", "Roboto", sans-serif;
-      color: black; 
+      color: #404040; 
       background-color: white; 
       font-size: 22px; 
       margin: 30px 0px;  
@@ -217,9 +234,16 @@ export default {
     margin-left: -40px;
     padding: 20px 10px 10px;
   }
-  .opencarelab-icon {
+  .opencarelab-icon-footer {
     color:white; 
     padding: 7px; 
+    text-decoration: none; 
+    font-family: Fantasy; 
+    font-size: 25px;
+  }
+  .opencarelab-icon {
+    color: black;
+    padding: 2px; 
     text-decoration: none; 
     font-family: Fantasy; 
     font-size: 25px;
