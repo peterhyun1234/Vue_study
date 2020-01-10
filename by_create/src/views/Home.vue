@@ -4,14 +4,37 @@
     <div class="container"> 
       <div class="row">
        <main class="col-12" role="main">
-        <section class="slide">
-          <div class="slideshow-container">
-            <img alt="test" v-bind:src="notebookIcon"/>
-            <img alt="slide" v-bind:src="slideImages[currentNumber]" 
-              style="max-width: 40%; height: auto;"
-              v-on:mouseover="stopRotation"
-              v-on:mouseout="startRotation"
-            />
+        <section class="slide" v-on:dblclick="stopRotation" v-on:click="startRotation">
+          <div class ="slide-container">
+              <transition name="slide-fade">
+                <div class="slide1" v-if="currentNumber === 0">
+                  <img alt="slide1" v-bind:src="slideImages[currentNumber]" 
+                    style="max-width: 40%; height: auto;"
+                  />
+                </div>
+              </transition>
+
+              <transition name="slide-fade">
+                <div class="slide2" v-if="currentNumber === 1">
+                  <img alt="slide2" v-bind:src="slideImages[currentNumber]" 
+                    style="max-width: 40%; height: auto;"
+                  />
+                </div>
+              </transition>
+
+              <transition name="slide-fade">
+                <div class="slide3" v-if="currentNumber === 2">
+                  <img alt="slide3" v-bind:src="slideImages[currentNumber]" 
+                    style="max-width: 40%; height: auto;"
+                  />
+                </div>
+              </transition>
+          </div>
+          <div class="slide-text" v-if="currentNumber === 0"><p>Design beautiful web/apps</p></div>
+          <div class="slide-text" v-if="currentNumber === 1"><p>Productively build web/apps</p></div>
+          <div class="slide-text" v-if="currentNumber === 2"><p>Create faster web/apps</p></div>
+          <div class= "notebook-icon">
+            <img alt="notebook-icon" v-bind:src="notebookIcon" style="max-width: 90%; height: auto;"/>
           </div>
         </section>
         <section class= "content1">
@@ -47,7 +70,7 @@
             <a class ="opencarelab-icon" href= "https://www.opencarelab.com/" target="_blank" rel="noopener">Opencarelab</a>
             <a class ="icon-box" href= "https://github.com/peterhyun1234/Vue_study" target="_blank"><i class="fa fa-github fa-2x"></i></a>
             <a class ="icon-box" href= "https://github.com/peterhyun1234/Vue_study" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
-            <a class ="icon-box" href= "https://github.com/peterhyun1234/Vue_study" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+            <a class ="icon-box" href= "https://www.linkedin.com/in/hyunbin-jeon-196a2b19b/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
           </div> 
           <div class ="footer-license">
             <p>
@@ -69,12 +92,13 @@ export default {
     return {
       notebookIcon: "https://imgur.com/ijYPMMw.png",
       slideImages: ["https://imgur.com/LlUdWIf.jpg", "https://imgur.com/IAlDDXT.jpg", "https://imgur.com/1bqiGwG.jpg"],
-      currentNumber: 0
+      currentNumber: 0,
+      show: true
     }
   },
   methods: {
     startRotation: function() {
-      this.timer = setInterval(this.next, 1000);
+      this.timer = setInterval(this.next, 2000);
     },
 
     stopRotation: function() {
@@ -97,18 +121,66 @@ export default {
 </script>
 
 <style>
+  .slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+  }
   .home {
-    background-color: #f2f2f2;
+    background-color: #f7f7f7;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
   }
   .row {
-    background-color: #f2f2f2;
+    background-color: #f7f7f7;
     flex-wrap: wrap;
     margin-right: +10%;
     margin-left: +10%;
   }
+  .notebook-icon {
+    position: relative;
+    padding: 35px 30px 15px;
+    top: 0;
+    z-index: 2; 
+  }
+  .slide-text {
+    position: absolute;
+    font-family: "Google Sans", "Roboto", sans-serif;
+    font-size: 80px;
+    padding: 35px 30px 15px;
+    top: 130px;
+    left: 285px;
+    z-index: 3; 
+  }
+  .slide1 {
+    position: absolute;
+    height: 40%;
+    top: 170px;
+    left: 0px;
+    z-index: 1;
+  }
+  .slide2 {
+    position: absolute;
+    height: 40%;
+    top: 170px;
+    left: 250px;
+    z-index: 1;
+  }
+  .slide3 {
+    position: absolute;
+    height: 40%;
+    top: 170px;
+    right: 0;
+    z-index: 1;
+  }
+
   .box {
       font-family: "Google Sans", "Roboto", sans-serif;
       color: black; 
