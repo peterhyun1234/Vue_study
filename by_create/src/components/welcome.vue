@@ -24,7 +24,6 @@ export default {
 
 <style scoped>
     div { 
-        font-family: "Google Sans", "Roboto", sans-serif;
         color: white; 
         background-color: #318f65 ; 
         font-size: 18px; 

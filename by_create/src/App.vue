@@ -25,6 +25,11 @@
                         icon: 'fa fa-home'
                     },
                     {
+                        href: '/introductionVideo',
+                        title: '소개 영상',
+                        icon: 'fa fa-video-camera'
+                    },
+                    {
                         href: '/installation',
                         title: 'Vue 설치 방법',
                         icon: 'fa fa-download'
@@ -48,7 +53,57 @@
                                 title: 'Sub Link2'
                             }
                         ]
-                    }
+                    },
+                    {
+                        href: '/vueBootstrap',
+                        title: 'Vue-Bootstrap 기초',
+                        icon: 'fa fa-bars',
+                        child: [
+                            {
+                                href: '/vueBootstrap1',
+                                title: 'Sub Link1'
+                            },
+                            {
+                                href: '/vueBootstrap2',
+                                title: 'Sub Link2'
+                            }
+                        ]
+                    },
+                    {
+                        href: '/vuetify',
+                        title: 'Vuetify 기초',
+                        icon: 'fa fa-bars',
+                        child: [
+                            {
+                                href: '/vuetify1',
+                                title: 'Sub Link1'
+                            },
+                            {
+                                href: '/vuetify2',
+                                title: 'Sub Link2'
+                            }
+                        ]
+                    },
+                    {
+                        href: '/vueNuxt',
+                        title: 'Vue-Nuxt 기초',
+                        icon: 'fa fa-bars',
+                        child: [
+                            {
+                                href: '/vueNuxt1',
+                                title: 'Sub Link1'
+                            },
+                            {
+                                href: '/vueNuxt2',
+                                title: 'Sub Link2'
+                            }
+                        ]
+                    },
+                    {
+                        href: '/AndSoOn',
+                        title: '기타 정보',
+                        icon: 'fa fa-handshake-o'
+                    },
                     
                 ]
             }
@@ -58,7 +113,7 @@
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Google Sans", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
