@@ -33,19 +33,19 @@
           <div class="slide-text" v-if="currentNumber === 0">
             <p text-shadow: style="text-shadow: 0.5px 0.5px 0.5px gray;">
               <span style="color: white;">Design be</span>
-              <span style="color: #4fe8a4;">autiful web/apps</span>
+              <span style="color: #42c289;">autiful web/apps</span>
             </p>
           </div>
           <div class="slide-text" v-if="currentNumber === 1">
             <p text-shadow: style="text-shadow: 0.5px 0.5px 0.5px gray;">
-            <span style="color: #4fe8a4;">Produ</span>
+            <span style="color: #42c289;">Produ</span>
             <span style="color: white;">ctively buil</span>
-            <span style="color: #4fe8a4;">d web/apps</span>
+            <span style="color: #42c289;">d web/apps</span>
             </p>
           </div>
           <div class="slide-text" v-if="currentNumber === 2">
             <p text-shadow: style="text-shadow: 0.5px 0.5px 0.5px gray;">
-              <span style="color: #4fe8a4;">Create faster we</span>
+              <span style="color: #42c289;">Create faster we</span>
               <span style="color: white;">b/apps</span>
             </p>
           </div>
@@ -55,24 +55,116 @@
         </section>
         <section class= "content1">
           <div class ="box">
-            <p>
-              Made By 
-              <a class ="opencarelab-icon" href= "https://www.opencarelab.com/" target="_blank" rel="noopener">
-                Opencarelab
-              </a>
-            </p>
-            <p>Vue는 아주 쓸만 합니다 제가 웹을 하나도 모르는 상태인데 조금만 공부해도 쉽게 사용할 수 있을 정도입니다.
-            </p>
+            <div class= "box-contents">
+              <p class ="content-text">
+                Made By 
+                <a class ="opencarelab-icon" href= "https://www.opencarelab.com/" target="_blank" rel="noopener">
+                  <span style="color: #2f7ff7">Open</span>
+                  <span style="color: #bd1000">care</span>
+                  <span style="color: #9904ba">lab</span>
+                </a>
+              </p>
+              <p class ="content-text" style="font-size: 27px; margin-right: +20%; margin-left: +20%;">
+                JHB-study is Opencarelab’s UI toolkit for building beautiful, natively compiled applications for 
+                  <span style="color: #42c289">mobile</span>
+                  , 
+                  <span style="color: #42c289">web</span>
+                  , and 
+                  <span style="color: #42c289">desktop</span> 
+                  from a single codebase.
+              </p>
+              <div class ="content-icon">
+                <span class= "GetStarted-button">
+                  <router-link to="/installation" style= "color:white; text-decoration: none; font-size: 22px; ">Get started</router-link>
+                </span>
+                <span class= "WatchVideo-button" style="font-size: 22px; margin-right: +3%; margin-left: +3%;">
+                  <a href="/installation" style= "color: #42c289; text-decoration: none; font-size: 22px;">
+                    <i class="fa fa-play-circle" aria-hidden="true" style="">  Watch video</i>
+                  </a>
+                </span>
+              </div>
+              <p class ="content-text" style="font-size: 18px; ">
+                Coming from another platform? Docs: 
+                  <span style= "color: #42c289;">
+                    iOS, Android, Web, React Native, Xamarin.
+                  </span>
+              </p>
+            </div>
           </div>
         </section>
         <section class= "content2">
-          <div class ="box">
-            <p>content2</p>
+          <div class ="box"  style="padding: 60px 0px;">
+            <div class ="content-text" style="float: left; width: 31.5%;">
+              <div class ="content-icon">
+                <i class="fa fa-terminal" aria-hidden="true" style="font-size: 30px; padding:20px; background-color: #d9ffee; color: #42c289; border-radius: 50%; "></i>
+              </div>
+              <p class ="content-text" style="font-size: 27px; margin: 10px 0px;">
+                Fast Development
+              </p>
+              <p class ="content-text" style="font-size: 17px; margin-right: +10%; margin-left: +10%;">
+                Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.
+              </p>
+            </div>
+            <div class ="content-text" style="float: left; width: 31.5%;">
+              <div class ="content-icon">
+                <i class="fa fa-connectdevelop" aria-hidden="true" style="font-size: 30px; padding:20px; background-color: #d9ffee; color: #42c289; border-radius: 50%; "></i>
+              </div>
+              <p class ="content-text" style="font-size: 27px; margin: 10px 0px;">
+                Expressive and Flexible UI
+              </p>
+              <p class ="content-text" style="font-size: 17px; margin-right: +10%; margin-left: +10%;">
+                Quickly ship features with a focus on native end-user experiences. Layered architecture allows for full customization, which results in incredibly fast rendering and expressive and flexible designs.
+              </p>
+            </div>
+            <div class ="content-text" style="float: left; width: 31.5%;">
+              <div class ="content-icon">
+                <i class="fa fa-object-group" aria-hidden="true" style="font-size: 30px; padding:20px; background-color: #d9ffee; color: #42c289; border-radius: 50%; "></i>
+              </div>
+              <p class ="content-text" style="font-size: 27px; margin: 10px 0px;">
+                Native Performance
+              </p>
+              <p class ="content-text" style="font-size: 17px; margin-right: +10%; margin-left: +10%;">
+                Flutter’s widgets incorporate all critical platform differences such as scrolling, navigation, icons and fonts, and your Flutter code is compiled to native ARM machine code using <span style="color: #42c289">Dart's native compilers</span>. Thus Flutter gives you full native performance on both iOS and Android.
+              </p>
+            </div>
           </div>
         </section>
         <section class= "content3">
           <div class ="box">
-            <p>content3</p>
+                      <div class ="content-text" style="float: left; width: 40%;">
+              <div class ="content-icon">
+                <i class="fa fa-terminal" aria-hidden="true" style="font-size: 30px; padding:20px; background-color: #d9ffee; color: #42c289; border-radius: 50%; "></i>
+              </div>
+              <p class ="content-text" style="font-size: 27px; margin: 10px 0px;">
+                Fast Development
+              </p>
+              <p class ="content-text" style="font-size: 17px; margin-right: +10%; margin-left: +10%;">
+                Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.
+              </p>
+            </div>
+            <div class ="content-text" style="float: left; width: 55%;">
+              <img src="https://firebasestorage.googleapis.com/v0/b/vue-mastery.appspot.com/o/flamelink%2Fmedia%2F1578365059649_0.gif?alt=media&token=cbde36f7-8aff-4ed0-a72f-eae0462814bc"/>
+            </div>
+          </div>
+        </section>
+        <section class= "content4">
+          <div class ="box">
+            ds
+          </div>
+        </section>
+        <section class= "content5">
+          <div class ="box">
+            <p class ="content-text" style="font-size: 35px; font-weight: 500; padding: 0px 10px 0px; margin-top: 40px; margin-bottom: 0px;">
+              Install JHB-study today.
+            </p>
+            <p class ="content-text" style="font-size: 21px; margin-top: 10px; margin-bottom: 0px;">
+              It’s free and open source.
+            </p>
+            <div class ="content-icon">
+              <span class= "GetStarted-button">
+                <router-link to="/installation" style= "color:white; text-decoration: none; font-size: 22px; ">Get started</router-link>
+              </span>
+            </div>
           </div>
         </section>
        </main>
@@ -169,7 +261,6 @@ export default {
   }
   .slide-text {
     position: absolute;
-    font-family: "Google Sans", "Roboto", sans-serif;
     font-size: 80px;
     padding: 35px 30px 15px;
     top: 130px;
@@ -199,17 +290,31 @@ export default {
   }
 
   .box {
-      font-family: "Google Sans", "Roboto", sans-serif;
       color: #404040; 
       background-color: white; 
       font-size: 22px; 
       margin: 30px 0px;  
-      padding: 10px 30px 5px;
+      padding: 0px 30px 0px;
       border: 1px solid #d9d9d9;
       border-radius: 1%;
+      overflow: hidden;
   }
+
+  .content-text {
+    padding: 5px;
+  }
+  .content-icon {
+    padding: 8px;
+    margin: 30px;
+  }
+  .GetStarted-button {
+    background-color: #42c289;
+    margin-right: +3%; 
+    margin-left: +3%; 
+    padding: 15px 50px 15px;
+  }
+
   .site-footer {
-    font-family: "Google Sans", "Roboto", sans-serif; 
     float: left;
     background-color: #2e2e2e;
     color: white;
