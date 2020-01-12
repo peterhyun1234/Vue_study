@@ -131,25 +131,43 @@
         </section>
         <section class= "content3">
           <div class ="box">
-                      <div class ="content-text" style="float: left; width: 40%;">
-              <div class ="content-icon">
-                <i class="fa fa-terminal" aria-hidden="true" style="font-size: 30px; padding:20px; background-color: #d9ffee; color: #42c289; border-radius: 50%; "></i>
+            <div class ="content-text" style="float: left; width: 40%; text-align: left; ">
+              <div class ="content-icon" style="margin: 60px 0px 0px; padding: 0px;">
+                <i class="fa fa-connectdevelop" aria-hidden="true" style="font-size: 25px; padding:10px; background-color: #d9ffee; color: #42c289; border-radius: 50%; "></i>
               </div>
-              <p class ="content-text" style="font-size: 27px; margin: 10px 0px;">
-                Fast Development
+              <p class ="content-text" style="font-size: 36px; margin: 10px 0px;  margin-right: +55%;">
+                Expressive, beautiful UIs
               </p>
-              <p class ="content-text" style="font-size: 17px; margin-right: +10%; margin-left: +10%;">
-                Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.
+              <p class ="content-text" style="font-size: 15px; margin-right: +25%;">
+                Delight your users with Flutter's built-in beautiful Material Design and Cupertino (iOS-flavor) widgets, rich motion APIs, smooth natural scrolling, and platform awareness.
               </p>
+              <a class ="content-text" href="https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance" target="_blank" rel="noopener" style="text-decoration: none; font-size: 15px; margin: 10px 0px; color: #42c289;">
+                Watch a free video course on Vue Mastery
+              </a>
             </div>
-            <div class ="content-text" style="float: left; width: 55%;">
-              <img src="https://firebasestorage.googleapis.com/v0/b/vue-mastery.appspot.com/o/flamelink%2Fmedia%2F1578365059649_0.gif?alt=media&token=cbde36f7-8aff-4ed0-a72f-eae0462814bc"/>
+            <div class ="content-text" style="float: left; width: 50%; padding: 50px 30px 50px;">
+              <img src="https://firebasestorage.googleapis.com/v0/b/vue-mastery.appspot.com/o/flamelink%2Fmedia%2F1578365059649_0.gif?alt=media&token=cbde36f7-8aff-4ed0-a72f-eae0462814bc" style="width: 100%; margin-left:auto; margin-right:auto;"/>
             </div>
           </div>
         </section>
         <section class= "content4">
           <div class ="box">
-            ds
+            <div class ="content-text" style="float: left; width: 50%; padding: 50px 30px 50px;">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/6EE7jm4YwOc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; margin-left:auto; margin-right:auto;"></iframe>
+            </div>
+            <div class ="content-text" style="float: left; width: 40%; text-align: right; ">
+              <div class ="content-icon" style="margin: 80px 0px 0px; padding: 0px;">
+              </div>
+              <p class ="content-text" style="font-size: 36px; margin: 10px 0px;  margin-left: +55%;">
+                Learn from developers
+              </p>
+              <p class ="content-text" style="font-size: 15px; margin-left: +25%;">
+                Watch these videos to learn from Google and developers as you build with Flutter.
+              </p>
+              <a class ="content-text" href="https://www.youtube.com/channel/UCa1zuotKU4Weuw_fLRnPv0A/playlists" target="_blank" rel="noopener" style="text-decoration: none; font-size: 15px; margin: 10px 0px; color: #42c289;">
+                Visit our YouTube playlist
+              </a>
+            </div>
           </div>
         </section>
         <section class= "content5">
