@@ -1,4 +1,4 @@
-# first_project
+# vue_bootstrap_study
 
 ## Project setup
 ```

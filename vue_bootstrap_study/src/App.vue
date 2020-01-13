@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <bootheader/>
+    <div id="nav">
+        <router-view/> <!-- views/에 있는 각 컴포넌트들을 보여주는 역할 -->
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import bootheader from './components/header.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    bootheader
   }
 }
 </script>
@@ -23,6 +25,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
