@@ -1,17 +1,17 @@
 <template>
   <div class="Header">
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="/">전현빈</b-navbar-brand>
+    <b-navbar toggleable="lg" type="dark" variant="success">
+      <b-navbar-brand href="/" style= "font-size: 25px">전현빈</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="showRequest">불만사항 보기</b-nav-item>
-          <b-nav-item href="sendRequest">불만사항 보내기</b-nav-item>
-          <b-nav-item href="helloworld">Nuxt HelloWorld</b-nav-item>
-          <b-nav-item href="randomGraph">웹소켓 예제</b-nav-item>
+          <b-nav-item href="/showRequest/show">불만사항 보기</b-nav-item>
+          <b-nav-item href="/sendRequest/send">불만사항 보내기</b-nav-item>
+          <b-nav-item href="/helloworld">Nuxt HelloWorld</b-nav-item>
+          <b-nav-item href="/randomGraph">웹소켓 예제</b-nav-item>
           <b-nav-item href="#">Link</b-nav-item>
           <b-nav-item href="#" disabled>Disabled</b-nav-item>
         </b-navbar-nav>

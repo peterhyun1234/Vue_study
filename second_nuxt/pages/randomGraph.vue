@@ -5,7 +5,7 @@
     </div>
     <div class="container">
         <div class="sampleUI">
-            Send Page
+            This is randomgraph
         </div>
     </div>
   </div>
@@ -31,7 +31,6 @@ export default {
 
 .sampleUI{
   margin: 80px 0px 0px;
-  font-size: 50px;
 }
 
 .container {

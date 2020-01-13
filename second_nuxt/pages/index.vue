@@ -1,29 +1,33 @@
 <template>
-  <div class="container">
-    <div>
-    <Header/>
-      <logo />
-      <h1 class="title">
-        second_nuxt
-      </h1>
-      <h2 class="subtitle">
-        My dazzling Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div id="Home">
+    <div class="header">
+      <Header />
+    </div>
+    <div class="container">
+      <div class="sampleUI">
+        <logo />
+        <h1 class="title">
+          second_nuxt
+        </h1>
+        <h2 class="subtitle">
+          My dazzling Nuxt.js project
+        </h2>
+        <div class="links">
+          <a
+            href="https://nuxtjs.org/"
+            target="_blank"
+            class="button--green"
+          >
+            Documentation
+          </a>
+          <a
+            href="https://github.com/nuxt/nuxt.js"
+            target="_blank"
+            class="button--grey"
+          >
+            GitHub
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -42,13 +46,19 @@ export default {
 </script>
 
 <style>
+#Home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.sampleUI{
+  margin: 80px 0px 0px;
+}
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 .title {
