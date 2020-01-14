@@ -17,6 +17,9 @@
                 recvnum: {{recvnum}}
               </p>
             </div>
+            <div>
+              <line-chart></line-chart>
+            </div>
           </div>
         </div>
       </div>
@@ -27,10 +30,12 @@
 <script>
 
 import Header from '~/components/Header.vue'
+import LineChart from '@/components/LineChart'
 
 export default {
   components: {
-    Header
+    Header,
+    LineChart
   },
   data() {
     return {
@@ -77,7 +82,7 @@ export default {
 }
 
 .sampleUI{
-  margin: 80px 0px 0px;
+  margin: 40px 0px 0px;
   font-size: 50px;
 }
 
