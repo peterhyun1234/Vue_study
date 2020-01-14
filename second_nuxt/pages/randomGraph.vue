@@ -8,10 +8,16 @@
         <div class="graphControl" style="color:white; font-size: 30px; margin: 0px 0px 50px;">
           <button class="simpleButton" v-on:click="connect" style="background-color:blue; margin: 0px 20px 0px;">Connect</button>
           <button class="simpleButton" v-on:click="disconnect" style="background-color:red; margin: 0px 20px 0px;">Disconnect</button>
-          <button class="simpleButton" v-on:click="Start" style="background-color:green; margin: 0px 20px 0px;">Start</button>
+          <button class="simpleButton" v-on:click="start" style="background-color:green; margin: 0px 20px 0px;">Start</button>
         </div>
         <div class="graphContainer" style="">
-          <span class="graph">sdsdsd</span>
+          <div class="graph">
+            <div>
+              <p style="font-size: 30px;">
+                recvnum: {{recvnum}}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -28,23 +34,32 @@ export default {
   },
   data() {
     return {
+      recvnum: 0,
       currentNumber: 0
     }
   },  
   methods: {
     connect: function() {
       this.$connect();
-    },   
+      this.$options.sockets.onmessage = (data) => (this.recvnum = data.data);
+      //this.$options.sockets.onmessage = (data) => this.messageReceived(data); //웹소켓 리스너
+    },  
+    messageReceived:function(recv_data){
+      this.recvdata = recv_data;
+    },
     
     disconnect: function() {
+      //delete this.$options.sockets.onmessage;
       this.$disconnect();
     },
 
     start: function() {
-        // $socket is [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) instance
-        this.$socket.send('start');
-        // or with {format: 'json'} enabled
-        //this.$socket.sendObj({awesome: 'data'})
+      var sendData = "start"
+      // $socket is [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) instance
+      this.$socket.send(sendData);
+      //JSON.stringify(data)
+      // or with {format: 'json'} enabled
+      //this.$socket.sendObj({awesome: 'start'})
     },
 
     next: function() {
