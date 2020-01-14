@@ -1,46 +1,24 @@
 <template>
   <div id="Home">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
     <div class="header">
       <Header />
     </div>
     <div class="container">
-        <div class="sampleUI">
-            <v-app id="myGraph">
-                <div class="text-center">            
-                    <v-btn class="mx-2" rounded dark large color="cyan" v-on:click="startGraph">
-                        <v-icon dark>mdi-clock-start</v-icon>START
-                    </v-btn>
-                
-                    <v-btn class="mx-2" rounded dark large color="red" v-on:click="endGraph">
-                        <v-icon dark>mdi-clock-end</v-icon>END
-                    </v-btn>
-                </div>
-                <v-sparkline
-                    :fill="fill"
-                    :gradient="gradient"
-                    :line-width="width"
-                    :padding="padding"
-                    :smooth="radius || false"
-                    :value="value"
-                    auto-draw
-                ></v-sparkline>
-            </v-app>
+      <div class="sampleUI">
+        <div class="graphControl" style="color:white; font-size: 30px; margin: 0px 0px 50px;">
+          <button class="simpleButton" v-on:click="connect" style="background-color:blue; margin: 0px 20px 0px;">Connect</button>
+          <button class="simpleButton" v-on:click="disconnect" style="background-color:red; margin: 0px 20px 0px;">Disconnect</button>
+          <button class="simpleButton" v-on:click="Start" style="background-color:green; margin: 0px 20px 0px;">Start</button>
         </div>
+        <div class="graphContainer" style="">
+          <span class="graph">sdsdsd</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-const gradients = [
-  ['#222'],
-  ['#42b3f4'],
-  ['red', 'orange', 'yellow'],
-  ['purple', 'violet'],
-  ['#00c6ff', '#F0F', '#FF0'],
-  ['#f72047', '#ffd200', '#1feaea'],
-]
 
 import Header from '~/components/Header.vue'
 
@@ -50,32 +28,27 @@ export default {
   },
   data() {
     return {
-        fill: true,
-        gradient: gradients[4],
-        gradients,
-        padding: 8,
-        radius: 10,
-        value: [0,1,2,3,4,5,6,7,8,9,10],
-        width: 2,
-        currentNumber: 0
+      currentNumber: 0
     }
   },  
   methods: {
-    startGraph: function() {
-      //this.timer = setInterval(this.next, 1000);
+    connect: function() {
+      this.$connect();
+    },   
+    
+    disconnect: function() {
+      this.$disconnect();
     },
 
-    endGraph: function() {
-      //clearTimeout(this.timer);
-      //this.timer = null;
+    start: function() {
+        // $socket is [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) instance
+        this.$socket.send('start');
+        // or with {format: 'json'} enabled
+        //this.$socket.sendObj({awesome: 'data'})
     },
 
     next: function() {
-    //   if(this.currentNumber == 14)
-    //     this.currentNumber = 0
-    //   else{
-    //     this.currentNumber += 1 
-    //   }
+
     }
   },
 }
@@ -91,7 +64,6 @@ export default {
 .sampleUI{
   margin: 80px 0px 0px;
   font-size: 50px;
-  font-family: "Roboto";
 }
 
 .container {
@@ -99,4 +71,25 @@ export default {
   min-height: 100vh;
 }
 
+.simpleButton {
+  border-radius:10px;
+  box-shadow: 2px 2px 2px 2px gray;
+  padding: 5px;
+}
+
+.log {
+  margin: 0px 20px 0px;
+  width: 30%;
+  border-radius:10px;
+  box-shadow: 2px 2px 2px 2px gray;
+  padding: 5px;
+}
+
+.graph {
+  margin: 0px 20px 0px;
+  width: 90%;
+  border-radius:10px;
+  box-shadow: 1px 1px 1px 1px gray;
+  padding: 30px 20px 20px;
+}
 </style>
