@@ -18,7 +18,7 @@
               </p>
             </div>
             <div>
-              <line-chart></line-chart>
+              <line-chart v-if="dataChanged" :chart-data="datacollection" :options="chartOptions"></line-chart>
             </div>
           </div>
         </div>
@@ -40,17 +40,89 @@ export default {
   data() {
     return {
       recvnum: 0,
-      currentNumber: 0
+      currentNumber: 0,
+      dataChanged: true,
+      datacollection: {
+        //Data to be represented on x-axis
+        labels: ['X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X8', 'X9', 'X10'], 
+        datasets: [
+          {
+            label: 'Data One',
+            backgroundColor: 'green',
+            pointBackgroundColor: 'white',
+            borderWidth: 1,
+            pointBorderColor: '#249EBF',
+            //Data to be represented on y-axis
+            data: [4, 2, 3, 5, 9, 1, 2, 4, 5, 7]
+          }
+        ]
+      },
+      chartOptions: {
+        tooltips: {
+            mode: 'point'
+        },
+        animation: {
+          duration: 0
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            },
+            gridLines: {
+              display: true
+            }
+          }],
+          xAxes: [ {
+            gridLines: {
+              display: false
+            }
+          }]
+        },
+        legend: {
+          display: true
+        },
+        responsive: true,
+        maintainAspectRatio: false
+      }
     }
   },  
+  created() {
+    //console.log("created!");
+  },
+
+  mounted() {
+    //console.log("mounted!");
+  },
+
+  updated() {
+    //console.log("updated!");
+    this.dataChanged = true;
+  },
+  destroyed() {
+    //console.log("destroyed!");
+  },
   methods: {
+
+
+    messageReceived: function(data){
+      //console.log("messageReceived: " + data);
+      //console.log(this.datacollection.datasets[0].data);
+      this.recvnum = data;
+      var push = this.datacollection.datasets[0].data.push(this.recvnum);
+      //console.log("push: " + push);
+      var shift = this.datacollection.datasets[0].data.shift();
+      //console.log("shift: " + shift);
+      //console.log("data[]: "+this.datacollection.datasets[0].data);
+      this.recvnum = data;
+      this.dataChanged = false;
+    },
+
     connect: function() {
       this.$connect();
-      this.$options.sockets.onmessage = (data) => (this.recvnum = data.data);
+      this.$options.sockets.onmessage = (data) => (this.messageReceived(data.data));
+      //console.
       //this.$options.sockets.onmessage = (data) => this.messageReceived(data); //웹소켓 리스너
-    },  
-    messageReceived:function(recv_data){
-      this.recvdata = recv_data;
     },
     
     disconnect: function() {
