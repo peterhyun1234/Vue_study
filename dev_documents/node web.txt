@@ -1,0 +1,6 @@
+<node websocket>
+https://nicgoon.tistory.com/235
+https://www.pubnub.com/blog/nodejs-websocket-programming-examples/
+
+<test>
+https://www.websocket.org/echo.html

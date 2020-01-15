@@ -1,0 +1,20 @@
+https://kdydesign.github.io/2019/04/10/nuxtjs-tutorial/
+
+<vue-nuxt starter-template>
+1. npm install -g @vue/cli @vue/cli-init
+2. vue init nuxt-community/starter-template vue_nuxt_study
+3. cd vue_nuxt_study
+4. npm install --save nuxt
+5. npm run dev
+
+<vue-nuxt starter-template>
+1. npx create-nuxt-app <project-name>
+
+<vue plugin적용 방법! egg. bootstrap-vue>
+https://github.com/nuxt/nuxt.js/issues/5049
+
+<nuxt에 vuetify 설치>
+npm install @nuxtjs/vuetify -D
+
+<material design icon>
+https://materialdesignicons.com/
